@@ -2,7 +2,6 @@
 
 import UIKit
 
-// MARK: <Chapter3>
 class Chapter3
 {
     func exercise1()
@@ -47,6 +46,19 @@ class Chapter3
         }
     }
     
+    static func run()
+    {
+        let chapter3 = Chapter3()
+        chapter3.exercise1()
+        chapter3.exercise2()
+        
+        let eq1 = chapter3.quadratic(a: 5, b: 6, c: 1)
+        print(eq1)
+    }
+}
+
+class Chapter4
+{
     func isPow2(num: Float) -> Bool
     {
         var local : Float = 2.0
@@ -109,31 +121,29 @@ class Chapter3
         
         return result
     }
+    
+    static func run()
+    {
+        let chapter4 = Chapter4()
+        let pw1 = chapter4.isPow2(num: 2.0)
+        assert(pw1 == true)
+        let pw2 = chapter4.isPow2(num: 3.0)
+        assert(pw2 == false)
+        let pw3 = chapter4.isPow2(num: 512)
+        assert(pw3 == true)
+        let pw4 = chapter4.isPow2(num: -128)
+        assert(pw4 == true)
+        let pw5 = chapter4.isPow2(num: -33)
+        assert(pw5 == false)
+        
+        // 1,1,2,3,5,8,13,21
+        let fib1 = chapter4.fibonacci(n: 7)
+        
+        //
+        let fct1 = chapter4.factorial(n: 1)
+        let fct2 = chapter4.factorial(n: 5)
+    }
 }
 
-// MARK: <Chapter4>
-
-let chapter3 = Chapter3()
-chapter3.exercise1()
-chapter3.exercise2()
-
-let eq1 = chapter3.quadratic(a: 5, b: 6, c: 1)
-print(eq1)
-
-let pw1 = chapter3.isPow2(num: 2.0)
-assert(pw1 == true)
-let pw2 = chapter3.isPow2(num: 3.0)
-assert(pw2 == false)
-let pw3 = chapter3.isPow2(num: 512)
-assert(pw3 == true)
-let pw4 = chapter3.isPow2(num: -128)
-assert(pw4 == true)
-let pw5 = chapter3.isPow2(num: -33)
-assert(pw5 == false)
-
-// 1,1,2,3,5,8,13,21
-let fib1 = chapter3.fibonacci(n: 7)
-
-//
-let fct1 = chapter3.factorial(n: 1)
-let fct2 = chapter3.factorial(n: 5)
+Chapter3.run()
+Chapter4.run()
